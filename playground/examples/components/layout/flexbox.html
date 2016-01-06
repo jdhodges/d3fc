@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox</title>
+    <link href="../d3fc.css" rel="stylesheet" />
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/d3fc/5.1.0/d3fc.min.css -->
+</head>
+<body>
+    <svg id="chart" width="100%" height="300px"></svg>
+
+    <script src="../d3fc.bundle.js"></script>
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/d3fc/5.1.0/d3fc.bundle.min.js -->
+
+    <script data-src="flexbox.js">
+var extent = fc.util.innerDimensions(document.getElementById('chart'));
+var width = extent.width,
+    height = extent.height;
+
+var dataGenerator = fc.data.random.financial()
+    .startDate(new Date(2014, 1, 1));
+var data = dataGenerator(50);
+
+var container = d3.select('#chart')
+    .insert('svg', 'div')
+    .attr('width', width)
+    .attr('height', height);
+
+// Create scale for x axis
+var xScale = fc.scale.dateTime()
+    .domain(fc.util.extent().fields('date')(data))
+    .range([0, width]);
+
+// Create scale for y axis
+var yScale = d3.scale.linear()
+    .domain(fc.util.extent().fields(['high', 'low'])(data))
+    .range([height, 0])
+    .nice();
+
+// apply the flexbox layout
+d3.select('#layout-test').layout();
+
+// This code simply creates some coloured rectangles so that you can
+// see the layout without reaching for your developer tools!
+var c10 = d3.scale.category10();
+d3.selectAll("g").filter(function(d) {
+    return this.childElementCount === 0;
+  })
+  .append('rect')
+  .attr('stroke', function(d, i) { return c10(i); })
+  .attr('fill', function(d, i) { return c10(i); })
+  .attr('width', function() {
+    return d3.select(this.parentNode).layout('width');
+  })
+  .attr('height', function() {
+    return d3.select(this.parentNode).layout('height')}
+  );
+
+    </script>
+</body>
+</html>

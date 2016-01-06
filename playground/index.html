@@ -1,0 +1,1240 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Playground Gallery</title>
+    <meta name="description" content="A collection of components that make it easy to build interactive charts with D3.">
+
+    <script src="../scripts.js"></script>
+
+    <link rel="icon" type="image/png" href="../images/favicon-16x16.png" sizes="16x16">
+    <link rel="icon" type="image/png" href="../images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96">
+    <link rel="stylesheet" href="../styles.css" />
+    
+  </head>
+  <body>
+    <div class="content">
+
+      <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="navbar-header">
+              <a href="../"><img class="navbar-logo" alt="d3fc" src="../images/logo.svg" /></a>
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              </div>
+            <div class="navbar-collapse collapse">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="..#quick-start">Quick Start</a></li>
+                <li class=""><a href="../components/introduction/1-getting-started.html">Documentation</a></li>
+                <li class=""><a href="../examples">Examples</a></li>
+                <li class=""><a href="../playground">Playground</a></li>
+                <li><a href="https://github.com/ScottLogic/d3fc">GitHub</a></li>
+              </ul>
+            </div>
+        </div>
+      </nav>
+
+      
+<div class="previews container" id="main">
+    <div class="row">
+        <h1>
+            d3fc Playground
+            <small>
+            click on a box to open it as an editable example
+            </small>
+        </h1>
+    </div>
+
+    
+    <div class="row">
+        <h2>Series Types</h2>
+    </div>
+    <div class="row">
+    
+      
+    
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/area">
+                <div id="series-area-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Area Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-area-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var area = fc.series.area()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(area);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/bar">
+                <div id="series-bar-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Bar Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-bar-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var bar = fc.series.bar()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(bar);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/candlestick">
+                <div id="series-candlestick-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Candlestick Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-candlestick-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var candlestick = fc.series.candlestick()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(candlestick);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/cycle">
+                <div id="series-cycle-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Cycle Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-cycle-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var data = [{"date":"20130603","sales":41},{"date":"20130604","sales":70},{"date":"20130605","sales":84},{"date":"20130606","sales":63},{"date":"20130607","sales":63},{"date":"20130608","sales":32},{"date":"20130609","sales":34},{"date":"20130610","sales":46},{"date":"20130611","sales":68},{"date":"20130612","sales":84},{"date":"20130613","sales":61},{"date":"20130614","sales":61},{"date":"20130615","sales":34},{"date":"20130616","sales":32},{"date":"20130617","sales":48},{"date":"20130618","sales":66},{"date":"20130619","sales":86},{"date":"20130620","sales":65},{"date":"20130621","sales":65},{"date":"20130622","sales":37},{"date":"20130623","sales":35},{"date":"20130624","sales":49},{"date":"20130625","sales":65},{"date":"20130626","sales":89},{"date":"20130627","sales":60},{"date":"20130628","sales":63},{"date":"20130629","sales":39},{"date":"20130630","sales":32},{"date":"20130701","sales":54},{"date":"20130702","sales":64},{"date":"20130703","sales":92},{"date":"20130704","sales":66},{"date":"20130705","sales":59},{"date":"20130706","sales":33},{"date":"20130707","sales":34},{"date":"20130708","sales":56},{"date":"20130709","sales":63},{"date":"20130710","sales":95},{"date":"20130711","sales":60},{"date":"20130712","sales":66},{"date":"20130713","sales":34},{"date":"20130714","sales":37},{"date":"20130715","sales":62},{"date":"20130716","sales":58},{"date":"20130717","sales":104},{"date":"20130718","sales":65},{"date":"20130719","sales":65},{"date":"20130720","sales":37},{"date":"20130721","sales":33},{"date":"20130722","sales":70},{"date":"20130723","sales":57},{"date":"20130724","sales":112},{"date":"20130725","sales":64},{"date":"20130726","sales":63},{"date":"20130727","sales":34},{"date":"20130728","sales":34}];
+
+var parseDate = d3.time.format('%Y%m%d').parse;
+data.forEach(function(d) {
+    d.date = parseDate(d.date);
+});
+
+var dayScale = d3.scale.ordinal()
+    .domain([0, 1, 2, 3, 4, 5, 6])
+    .rangePoints([0, width], 1.0);
+
+var salesScale = d3.scale.linear()
+    .domain(fc.util.extent().fields('sales')(data))
+    .range([height, 0])
+    .nice();
+
+var subScale = d3.scale.linear()
+    .domain(fc.util.extent().fields('date')(data));
+
+var subAxis = fc.series.axis()
+    .tickSize(0)
+    .ticks(0)
+    .baseline(function(d) {
+        return d3.mean(d, function(d) { return d.sales; });
+    });
+
+var lineSeries = fc.series.line()
+    .xValue(function(d) { return d.date; })
+    .yValue(function(d) { return d.sales; });
+
+var multiSeries = fc.series.multi()
+        .series([lineSeries, subAxis]);
+
+var cycle = fc.series.cycle()
+    .barWidth(fc.util.fractionalBarWidth(0.9))
+    .yScale(salesScale)
+    .xScale(dayScale)
+    .xValue(function(d) { return d.date.getDay(); })
+    .subScale(subScale)
+    .subSeries(multiSeries);
+
+container.datum(data)
+    .call(cycle);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/errorBar">
+                <div id="series-errorBar-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Error Bar Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-errorBar-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        //Generating the error information for the data
+data.forEach(function(d) {
+    d.yUpError = Math.random() * 2;
+    d.yDownError = Math.random() * 2;
+});
+
+var errorBar = fc.series.errorBar()
+    .xScale(xScale)
+    .yScale(yScale)
+    .errorLow(function(d,i) { return d.close - d.yDownError; })
+    .errorHigh(function(d,i) { return d.close + d.yUpError; });
+
+container.append('g')
+    .datum(data)
+    .call(errorBar);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/grouped-bar">
+                <div id="series-groupedBar-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Grouped Bar Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-groupedBar-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var data = [
+   {"State":"AL","Under 5 Years":"310","5 to 13 Years":"552","14 to 17 Years":"259","18 to 24 Years":"450","25 to 44 Years":"1215","45 to 64 Years":"641"},
+   {"State":"AK","Under 5 Years":"52","5 to 13 Years":"85","14 to 17 Years":"42","18 to 24 Years":"74","25 to 44 Years":"183","45 to 64 Years":"50"},
+   {"State":"AZ","Under 5 Years":"515","5 to 13 Years":"828","14 to 17 Years":"362","18 to 24 Years":"601","25 to 44 Years":"1804","45 to 64 Years":"1523"},
+   {"State":"AR","Under 5 Years":"202","5 to 13 Years":"343","14 to 17 Years":"157","18 to 24 Years":"264","25 to 44 Years":"754","45 to 64 Years":"727"}
+];
+
+// manipulate the data into stacked series
+var spread = fc.data.spread()
+    .xValueKey('State');
+
+var series = spread(data);
+
+// create scales
+var x = d3.scale.ordinal()
+    .domain(data.map(function(d) { return d.State; }))
+    .rangePoints([0, width], 1);
+
+var yExtent = fc.util.extent()
+    .fields('y')
+    .include(0);
+
+var y = d3.scale.linear()
+    .domain(yExtent(series.map(function(d) { return d.values; })))
+    .range([height, 0]);
+
+// create the grouped bar series
+var groupedBar = fc.series.groupedBar()
+    .xScale(x)
+    .yScale(y)
+    .xValue(function(d) { return d.x; })
+    .yValue(function(d) { return d.y; });
+
+// render
+container.append('g')
+    .datum(series)
+    .call(groupedBar);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/line">
+                <div id="series-line-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Line Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-line-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var line = fc.series.line()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(line);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/multi">
+                <div id="series-multi-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Multi Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-multi-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var candlestick = fc.series.candlestick();
+var gridlines = fc.annotation.gridline();
+
+// Create a a bollinger series
+var bollingerAlgorithm = fc.indicator.algorithm.bollingerBands();
+bollingerAlgorithm(data);
+var bollinger = fc.indicator.renderer.bollingerBands();
+
+var multi = fc.series.multi()
+    .series([gridlines, bollinger, candlestick])
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(multi);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/ohlc">
+                <div id="series-ohlc-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>OHLC Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-ohlc-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var ohlc = fc.series.ohlc()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(ohlc);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/point">
+                <div id="series-point-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Point Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-point-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var color = d3.scale.category10();
+
+var point = fc.series.point()
+    .xScale(xScale)
+    .yScale(yScale)
+    .size(200) // increase the area to 200 pixels
+    .decorate(function(sel) {
+      // use decorate to set the fill color based on index
+      sel.select('path')
+        .attr('style', function(d, i) { return 'fill: ' + color(i); });
+    });
+
+container.append('g')
+    .datum(data)
+    .call(point);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/stacked">
+                <div id="series-stacked" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Stacked Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-stacked', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var data = [
+   {"State":"AL","Under 5 Years":"310","5 to 13 Years":"552","14 to 17 Years":"259","18 to 24 Years":"450","25 to 44 Years":"1215","45 to 64 Years":"641"},
+   {"State":"AK","Under 5 Years":"52","5 to 13 Years":"85","14 to 17 Years":"42","18 to 24 Years":"74","25 to 44 Years":"183","45 to 64 Years":"50"},
+   {"State":"AZ","Under 5 Years":"515","5 to 13 Years":"828","14 to 17 Years":"362","18 to 24 Years":"601","25 to 44 Years":"1804","45 to 64 Years":"1523"},
+   {"State":"AR","Under 5 Years":"202","5 to 13 Years":"343","14 to 17 Years":"157","18 to 24 Years":"264","25 to 44 Years":"754","45 to 64 Years":"727"},
+   {"State":"CO","Under 5 Years":"358","5 to 13 Years":"587","14 to 17 Years":"261","18 to 24 Years":"466","25 to 44 Years":"1464","45 to 64 Years":"1290"},
+   {"State":"CT","Under 5 Years":"211","5 to 13 Years":"403","14 to 17 Years":"196","18 to 24 Years":"325","25 to 44 Years":"916","45 to 64 Years":"968"},
+   {"State":"DE","Under 5 Years":"59","5 to 13 Years":"99","14 to 17 Years":"47","18 to 24 Years":"84","25 to 44 Years":"230","45 to 64 Years":"230"}
+];
+
+// manipulate the data into stacked series
+var spread = fc.data.spread()
+    .xValueKey('State');
+var stack = d3.layout.stack()
+    .values(function(d) { return d.values; });
+
+var series = stack(spread(data));
+
+// create scales
+var x = d3.scale.ordinal()
+    .domain(data.map(function(d) { return d.State; }))
+    .rangePoints([0, width], 1);
+
+var yExtent = fc.util.extent()
+    .include(0)
+    .fields(function(d) { return d.y + d.y0; });
+
+var y = d3.scale.linear()
+    .domain(yExtent(series.map(function(d) { return d.values; })))
+    .range([height, 0]);
+
+// create the stacked bar series (this could also be line or area)
+var stack = fc.series.stacked.bar()
+    .xScale(x)
+    .yScale(y)
+    .xValue(function(d) { return d.x; });
+
+// render
+container.append('g')
+    .datum(series)
+    .call(stack);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/series/waterfall">
+                <div id="series-waterfall-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Waterfall Series</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#series-waterfall-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        var data = [
+  { month: 'January', profit: 4000 },  
+  { month: 'February', profit: 2000 },
+  { month: 'March', profit: -1000 },
+  { month: 'April', profit: 1500 },
+  { month: 'May', profit: 100 },
+  { month: 'June', profit: 500 },
+  { month: 'July', profit: -100 },
+  { month: 'August', profit: 800 },
+  { month: 'September', profit: 1200 },
+  { month: 'October', profit: 1500 },
+  { month: 'November', profit: 1400 },
+  { month: 'December', profit: 2000 }
+];
+
+var waterfallData = fc.series.algorithm.waterfall()
+    .xValueKey('month')
+    .yValue(function(d) { return d.profit; })
+    .startsWithTotal(true)
+    .total(function(d, i, data) {
+        if ((i + 1) % 3 === 0) {
+            return 'Q' + ((i + 1) / 3) + ' total';
+        }
+    })(data);
+
+var xScale = d3.scale.ordinal()
+    .domain(waterfallData.map(function(d) { return d.x; }))    
+    .rangeRoundBands([0, width], 0.1);
+yScale.domain(fc.util.extent().fields('y1').pad(0.2).include(0)(waterfallData));
+
+var waterfall = fc.series.waterfall()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(waterfallData)
+    .call(waterfall);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    </div>
+    
+    <div class="row">
+        <h2>Financial Indicators</h2>
+    </div>
+    <div class="row">
+    
+      
+    
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/bollingerBands">
+                <div id="indicator-algorithm-bollingerBands-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Bollinger Bands</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-bollingerBands-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create the point series
+var point = fc.series.point()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(point);
+
+// Create and apply the bollinger algorithm
+var bollingerAlgorithm = fc.indicator.algorithm.bollingerBands();
+bollingerAlgorithm(data);
+
+// Create the renderer
+var bollinger = fc.indicator.renderer.bollingerBands()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(bollinger);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/elderRay">
+                <div id="indicator-algorithm-elderRay-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Elder Ray</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-elderRay-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create and apply the elder ray algorithm
+var elderRayAlgorithm = fc.indicator.algorithm.elderRay()
+    .period(6);
+elderRayAlgorithm(data);
+
+// the elder ray is rendered on its own scale
+var yDomain = fc.util.extent()
+  .fields([function(d) { return d.elderRay.bullPower;}, function(d) { return d.elderRay.bearPower; }])
+  .symmetricalAbout(0)
+  .pad(0.1);
+
+var yScale = d3.scale.linear()
+    .domain(yDomain(data))
+    .range([height, 0]);
+
+// Create the renderer
+var elderRay = fc.indicator.renderer.elderRay()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(elderRay);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/envelope">
+                <div id="indicator-algorithm-envelope-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Envelope</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-envelope-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create the line series
+var line = fc.series.line()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(line);
+
+// Create and apply the envelopes algorithm
+var envelopeAlgorithm = fc.indicator.algorithm.envelope()
+    .factor(0.01)
+    .value(function(d) { return d.close; });
+envelopeAlgorithm(data);
+
+// Create the renderer
+var envelope = fc.indicator.renderer.envelope()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(envelope);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/exponentialMovingAverage">
+                <div id="indicator-algorithm-exponentialMovingAverage-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Exponential Moving Average</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-exponentialMovingAverage-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create the point series
+var point = fc.series.point()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(point);
+
+// Create and apply the EMA
+var movingAverage = fc.indicator.algorithm.exponentialMovingAverage()
+movingAverage(data);
+
+// Create a line that renders the result
+var ma = fc.series.line()
+    .yValue(function(d) { return d.exponentialMovingAverage; })
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(ma);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/forceIndex">
+                <div id="indicator-algorithm-forceIndex-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Force Index</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-forceIndex-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create and apply the Force Index algorithm
+var forceAlgorithm = fc.indicator.algorithm.forceIndex();
+forceAlgorithm(data);
+
+//Scaling the display using the maximum absolute value of the Index
+var yDomain = fc.util.extent()
+    .fields(function(d) { return d.force; })
+    .symmetricalAbout(0);
+
+var yScale = d3.scale.linear()
+    .domain(yDomain(data))
+    .range([height, 0]).nice();
+
+// Create the renderer
+var force = fc.indicator.renderer.forceIndex()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(force);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/macd">
+                <div id="indicator-algorithm-macd-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>MACD</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-macd-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        
+// Create and apply the macd algorithm
+var macdAlgorithm = fc.indicator.algorithm.macd()
+    .fastPeriod(4)
+    .slowPeriod(10)
+    .signalPeriod(5);
+macdAlgorithm(data);
+
+// the MACD is rendered on its own scale, centered around zero
+var yDomain = fc.util.extent()
+    .fields(function(d) { return d.macd.macd; })
+    .symmetricalAbout(0);
+
+var yScale = d3.scale.linear()
+    .domain(yDomain(data))
+    .range([height, 0]);
+
+// Create the renderer
+var macd = fc.indicator.renderer.macd()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(macd);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/movingAverage">
+                <div id="indicator-algorithm-movingAverage-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Moving Average</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-movingAverage-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create the point series
+var point = fc.series.point()
+    .xScale(xScale)
+    .yScale(yScale);
+
+container.append('g')
+    .datum(data)
+    .call(point);
+
+// Create and apply the Moving Average
+var movingAverage = fc.indicator.algorithm.movingAverage()
+movingAverage(data);
+
+// Create a line that renders the result
+var ma = fc.series.line()
+    .yValue(function(d) { return d.movingAverage; })
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(ma);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/relativeStrengthIndicator">
+                <div id="indicator-algorithm-relativeStrengthIndex-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Relative Strength Index</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-relativeStrengthIndex-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        
+// the RSI is output on a percentage scale, so requires a domain from 0 - 100
+var yScale = d3.scale.linear()
+      .domain([0, 100])
+      .range([height, 0]);
+
+// Create and apply the RSI algorithm
+var rsiAlgorithm = fc.indicator.algorithm.relativeStrengthIndex();
+rsiAlgorithm(data);
+
+// Create the renderer
+var rsi = fc.indicator.renderer.relativeStrengthIndex()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(rsi);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <a href="playground.html?example=components/indicator/stochasticOscillator">
+                <div id="indicator-algorithm-stochasticOscillator-js" class="chart-small">
+
+                    <div class="caption">
+                        <h4>Stochastic Oscillator</h4>
+                    </div>
+                </div>
+            </a>
+            <script type="text/javascript">
+        (function() {
+        var f = createFixture('#indicator-algorithm-stochasticOscillator-js', 800, null, null, function() { return true; });
+        var container = f.container, data = f.data
+        xScale = f.xScale, yScale = f.yScale,
+        height = f.dimensions.height, width = f.dimensions.width;
+        // Create and apply the stochastic oscillator algorithm
+var stochasticAlgorithm = fc.indicator.algorithm.stochasticOscillator()
+    .kWindowSize(14);
+stochasticAlgorithm(data);
+
+// the stochastic oscillator is rendered on its own scale
+var yScale = d3.scale.linear()
+    .domain([0, 100])
+    .range([height - 5, 5]);
+
+// Create the renderer
+var stochastic = fc.indicator.renderer.stochasticOscillator()
+    .xScale(xScale)
+    .yScale(yScale);
+
+// Add it to the container
+container.append('g')
+    .datum(data)
+    .call(stochastic);
+
+        }());
+            </script>
+            
+        </div>
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      
+    
+    </div>
+    
+    <div class="row">
+        <h2>More Complex Examples</h2>
+    </div>
+    <div class="row">
+    
+      
+    
+      
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <div class="chart-small">
+            <a href="playground.html?example=examples/bubble/index" class="thumbnail">
+              <img src="../examples/bubble/thumbnail.png" alt="Stacked Bar">
+              <div class="caption">
+                  <h4>Bubble chart</h4>
+              </div>
+              </a>
+            </div>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <div class="chart-small">
+            <a href="playground.html?example=examples/scatter/index" class="thumbnail">
+              <img src="../examples/scatter/thumbnail.png" alt="Stacked Bar">
+              <div class="caption">
+                  <h4>Scatterplot</h4>
+              </div>
+              </a>
+            </div>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <div class="chart-small">
+            <a href="playground.html?example=examples/simple/index" class="thumbnail">
+              <img src="../examples/simple/thumbnail.png" alt="Stacked Bar">
+              <div class="caption">
+                  <h4>Line / Area Chart</h4>
+              </div>
+              </a>
+            </div>
+            
+        </div>
+          
+        
+          
+        <div class="col-sm-4 preview">
+            
+            <div class="chart-small">
+            <a href="playground.html?example=examples/stacked/index" class="thumbnail">
+              <img src="../examples/stacked/thumbnail.png" alt="Stacked Bar">
+              <div class="caption">
+                  <h4>Stacked Bar</h4>
+              </div>
+              </a>
+            </div>
+            
+        </div>
+          
+        
+      
+    
+    </div>
+    
+</div>
+
+
+    </div>
+    <footer>
+      <div class="container">
+        <p class="muted credit text-center">Project supported by <a href="http://www.scottlogic.com">Scott Logic</a>.</p>
+        <p class="muted credit text-center">Browser testing provided by <a class="browserstack" href="https://browserstack.com">BrowserStack</a>.</p>
+      </div>
+    </footer>
+
+    
+    
+    <script src="//localhost:35729/livereload.js"></script>
+  </body>
+</html>

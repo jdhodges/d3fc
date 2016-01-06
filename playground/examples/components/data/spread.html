@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spread</title>
+    <link href="../d3fc.css" rel="stylesheet" />
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/d3fc/5.1.0/d3fc.min.css -->
+</head>
+<body>
+    <svg id="chart" width="100%" height="300px"></svg>
+
+    <script src="../d3fc.bundle.js"></script>
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/d3fc/5.1.0/d3fc.bundle.min.js -->
+
+    <script data-src="spread.js">
+var extent = fc.util.innerDimensions(document.getElementById('chart'));
+var width = extent.width,
+    height = extent.height;
+
+var dataGenerator = fc.data.random.financial()
+    .startDate(new Date(2014, 1, 1));
+var data = dataGenerator(50);
+
+var container = d3.select('#chart')
+    .insert('svg', 'div')
+    .attr('width', width)
+    .attr('height', height);
+
+// Create scale for x axis
+var xScale = fc.scale.dateTime()
+    .domain(fc.util.extent().fields('date')(data))
+    .range([0, width]);
+
+// Create scale for y axis
+var yScale = d3.scale.linear()
+    .domain(fc.util.extent().fields(['high', 'low'])(data))
+    .range([height, 0])
+    .nice();
+
+var data = [
+ {"State":"AL","Under 5 Years":"310","5 to 13 Years":"552","14 to 17 Years":"259","18 to 24 Years":"450","25 to 44 Years":"1215","45 to 64 Years":"641"},
+ {"State":"AK","Under 5 Years":"52","5 to 13 Years":"85","14 to 17 Years":"42","18 to 24 Years":"74","25 to 44 Years":"183","45 to 64 Years":"50"},
+ {"State":"AZ","Under 5 Years":"515","5 to 13 Years":"828","14 to 17 Years":"362","18 to 24 Years":"601","25 to 44 Years":"1804","45 to 64 Years":"1523"}
+];
+
+var spread = fc.data.spread()
+    .xValueKey('State');
+
+var series = spread(data);
+
+    </script>
+</body>
+</html>

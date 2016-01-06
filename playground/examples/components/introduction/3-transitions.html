@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transitions</title>
+    <link href="../d3fc.css" rel="stylesheet" />
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/d3fc/5.1.0/d3fc.min.css -->
+</head>
+<body>
+    <svg id="chart" width="100%" height="300px"></svg>
+
+    <script src="../d3fc.bundle.js"></script>
+    <!-- https://cdnjs.cloudflare.com/ajax/libs/d3fc/5.1.0/d3fc.bundle.min.js -->
+
+    <script data-src="3-transitions.js">
+var extent = fc.util.innerDimensions(document.getElementById('chart'));
+var width = extent.width,
+    height = extent.height;
+
+var dataGenerator = fc.data.random.financial()
+    .startDate(new Date(2014, 1, 1));
+var data = dataGenerator(50);
+
+var container = d3.select('#chart')
+    .insert('svg', 'div')
+    .attr('width', width)
+    .attr('height', height);
+
+// Create scale for x axis
+var xScale = fc.scale.dateTime()
+    .domain(fc.util.extent().fields('date')(data))
+    .range([0, width]);
+
+// Create scale for y axis
+var yScale = d3.scale.linear()
+    .domain(fc.util.extent().fields(['high', 'low'])(data))
+    .range([height, 0])
+    .nice();
+
+// generate some random data
+data = d3.range(40).map(Math.random);
+
+// render a bar series via the cartesian chart component
+var barSeries = fc.series.bar()
+    .key(fc.util.fn.identity)
+    .xValue(fc.util.fn.index)
+    .yValue(fc.util.fn.identity);
+
+var chart = fc.chart.cartesian(
+              d3.scale.linear(),
+              d3.scale.linear())
+    .xDomain([-1, data.length])
+    .margin({top: 10, bottom: 10, right: 30})
+    .plotArea(barSeries);
+
+var index = 0;
+function render() {
+  if (index === data.length) {
+    return; // we're all done!
+  }
+
+  // perform a single iteration of the bubble sort
+  var temp;
+  for (var j = index; j > 0; j--) {
+      if (data[j] < data[j - 1]) {
+          temp = data[j];
+          data[j] = data[j - 1];
+          data[j - 1] = temp;
+      }
+  }
+  index++;
+
+  // re-render the chart
+  d3.select('#transitions-chart')
+      .datum(data)
+      .transition()
+      .duration(500)
+      .call(chart);
+}
+
+setInterval(render, 1000);
+render();
+
+    </script>
+</body>
+</html>
